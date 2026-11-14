@@ -1,0 +1,33 @@
+body {background-color: black}
+table {margin-left: auto;
+    margin-right: auto;}
+h1 {color: white;
+    font-family: Algerian,Baskerville Old,Arial;
+    font-size: 50pt;
+    background-color: darkmagenta;
+    text-align: left;}
+h3 {color: darkmagenta;
+font-size: 20pt;
+font-family: 'Courier New', Courier, monospace;}
+.menu ul {list-style: none;
+padding: 0%;
+margin: 0%;
+display: flex;
+gap: 20px;
+justify-content: center;}
+.menu li {display: inline;}
+.menu a {text-decoration: none;
+color: darkmagenta;
+font-weight: bold;
+padding: 10px;
+font-size: 15pt;}
+.menu a:hover {text-decoration: underline;}
+#head {background-color: crimson;
+color: darkmagenta;
+font-size: 70pt;
+font-family: Bernard MT, Arial;
+text-align: center;}
+.last a {text-decoration: none;
+color: darkmagenta;
+font-size: 20pt;
+font-family: 'Courier New', Courier, monospace}

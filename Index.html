@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="formatting.css">
+</head>
+<body>
+    <section>
+        <button id="themeToggle">Light Mode</button>
+        <h1>My creative journey</h1>
+
+        <p id="intro"></p>
+    </section>
+    <section class="firstsection">
+        <div class="secondsection">
+            <div class="sectiontitle">
+                <h3>Art <a href="art.html">▶</a></h3>
+                <span>Click for more</span>
+            </div>
+            <div class="cards">
+                <div>
+                    <img src="arts/Sua_art.jpg" alt="Sua_art">
+                </div>
+                <div>
+                    <img src="arts/blueberry.jpg" alt="blueberry_art">
+                </div>
+                <div>
+                    <img src="arts/girl_art.jpg" alt="girl_art">
+                </div>
+            </div>
+        <div class="secondsection">
+            <div class="sectiontitle">
+                <h3>Website <a href="website.html">▶</a></h3>
+                <span>Click for more</span>
+            </div>
+            <div class="cards">
+                <div>
+                    <img src="arts/web1.png" alt="web1">
+                </div>
+                <div>
+                    <p>coming soon....</p>
+                </div>
+                <div>
+                    <p>coming soon....</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Scroll progress bar -->
+<div id="scrollProgress"></div>
+
+<!-- Back to top button -->
+<button id="backToTop" type="button">⬆</button>
+
+<!-- Custom cursor -->
+<div id="cursorGlow"></div>
+    <script>
+    const arrow = document.querySelector("h3 a");
+
+    arrow.addEventListener("click", function() {
+        arrow.textContent = "♪";
+    });
+    const text = "This is my journey of expressing my creativity through art :).";
+
+let index = 0;
+
+function typing() {
+    if (index < text.length) {
+        document.getElementById("intro").textContent += text.charAt(index);
+        index++;
+        setTimeout(typing, 50);
+    }
+}
+
+typing();
+const button = document.getElementById("themeToggle");
+
+button.addEventListener("click", function() {
+
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+        button.textContent = "Dark Mode";
+        localStorage.setItem("theme", "light");
+    } 
+    else {
+        button.textContent = "Light Mode";
+        localStorage.setItem("theme", "dark");
+    }
+
+});
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.body.classList.add("light");
+    button.textContent = "Dark Mode";
+}
+window.addEventListener("scroll", function() {
+
+    const scrollTop = window.scrollY;
+
+    const pageHeight = document.documentElement.scrollHeight
+                     - document.documentElement.clientHeight;
+
+    const progress = (scrollTop / pageHeight) * 100;
+
+    document.getElementById("scrollProgress").style.width =
+        progress + "%";
+
+});
+const topButton = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 300) {
+        topButton.style.display = "block";
+    } 
+    else {
+        topButton.style.display = "none";
+    }
+
+});
+
+topButton.addEventListener("click", function() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+const cursor = document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove", function(event) {
+
+    cursor.style.left = event.clientX + "px";
+    cursor.style.top = event.clientY + "px";
+
+});
+</script>
+</body>
+</html>
