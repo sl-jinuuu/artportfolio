@@ -151,12 +151,29 @@ body.light a {
     transform: translate(-50%, -50%);
     box-shadow: 0 0 15px turquoise;
     z-index: 10000;
-    display: none;
-}
-
+    display: none;}
 /* Only activate on devices with a mouse */
 @media (hover: hover) and (pointer: fine) {
     #cursorGlow {
-        display: block;
+        display: block;}
+}
+/* Mobile phone layout */
+@media screen and (max-width: 600px) {
+
+body {padding: 20px 5%;
     }
+h1 {
+    font-size: 32pt;}
+h2 {
+        font-size: 24pt;}
+h3 {font-size: 17pt;}
+p {font-size: 13pt;}
+.firstsection {padding: 15px;
+        border-radius: 20px;}
+.cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+.cards img {
+        height: 220px;}
 }
