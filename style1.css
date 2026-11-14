@@ -31,3 +31,27 @@ text-align: center;}
 color: darkmagenta;
 font-size: 20pt;
 font-family: 'Courier New', Courier, monospace}
+img {max-width: 100%;
+    height: auto;
+    display: block;}
+table {width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;}
+h1 {font-size: 50pt;}
+h3 {font-size: 20pt;}
+/* Mobile view */
+@media screen and (max-width: 600px) {
+table {
+        width: 100%;}
+.menu ul {flex-wrap: wrap;
+        gap: 5px;}
+.menu a {font-size: 11pt;
+        padding: 5px;}
+#head {font-size: 35pt;}
+h1 {font-size: 25pt;}
+h3 {font-size: 12pt;
+        line-height: 1.5;}
+img { width: 100%;}
+td {padding: 5px;}
+}
